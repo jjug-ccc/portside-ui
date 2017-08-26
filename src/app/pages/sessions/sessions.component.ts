@@ -24,4 +24,8 @@ export class SessionsComponent implements OnInit {
 			}
 		);
 	}
+
+	toggle() {
+
+	}
 }
