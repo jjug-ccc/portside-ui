@@ -3,15 +3,13 @@
 		<md-card class="example-card" *ngFor="let session of sessions">
 		  <md-card-header>
 			<div md-card-avatar class="example-header-image"></div>
-			<md-card-title>Shiba Inu</md-card-title>
-			<md-card-subtitle>Dog Breed</md-card-subtitle>
+			<md-card-title>{{ session.title }}</md-card-title>
+			<md-card-subtitle>{{ session.speaker }}</md-card-subtitle>
 		  </md-card-header>
 		  <img md-card-image src="assets/img/shiba2.jpg">
 		  <md-card-content>
 			<p>
-			  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-			  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-			  bred for hunting.
+			  {{ session.description }}
 			</p>
 			  <div>
 				  <md-checkbox>Check me!</md-checkbox>

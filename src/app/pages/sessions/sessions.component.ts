@@ -22,7 +22,6 @@ export class SessionsComponent implements OnInit {
 			error => {
 				console.dir(error);
 			}
-		);;
+		);
 	}
-
 }

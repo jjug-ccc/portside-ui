@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from "../../session.service";
 
 @Component({
 	selector: 'app-profile',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-	constructor() {
+	constructor(private sessionService: SessionService) {
 	}
 
 	ngOnInit() {
+	}
+
+	attend() {
+		this.sessionService.addAttendee().subscribe(
+			data => {
+				console.dir(data);
+			},
+			error => {
+				console.dir(error);
+			}
+		);
 	}
 }

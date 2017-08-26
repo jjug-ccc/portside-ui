@@ -16,5 +16,8 @@ export class SessionService {
 	}
 
 	addAttendee() {
+		return this.http.post('/attendees', {}).map((response: Response) => {
+			return response.json();
+		});
 	}
 }
