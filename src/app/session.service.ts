@@ -3,9 +3,12 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SessionService {
 
-  constructor() { }
+	constructor() {
+	}
 
-  getSessons() {}
+	getSessons() {
+	}
 
-  addAttendee() {}
+	addAttendee() {
+	}
 }
