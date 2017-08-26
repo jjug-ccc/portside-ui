@@ -1,0 +1,4 @@
+applications:
+- name: portside
+  buildpack: staticfile_buildpack
+  memory: 64m
