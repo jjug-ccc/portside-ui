@@ -54,13 +54,13 @@ jobs:
               set -e
               npm install
               npm run build
-              cp -ra dist/* ../output/
+              cp manifest.yml ../output/
+              cp -ra dist ../output/
         on_failure:
           <<: *SLACK_FAILURE
       - put: cf
         params:
-          manifest: repo/manifest.yml
-          path: output
+          manifest: output/manifest.yml
           current_app_name: portside
         on_success:
           <<: *SLACK_SUCCESS
