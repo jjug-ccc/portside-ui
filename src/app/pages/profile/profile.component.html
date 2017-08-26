@@ -1,10 +1,10 @@
-<p>
-	profile works!
-</p>
+<form (ngSubmit)="attend()">
+	<md-input-container>
+		<input mdInput placeholder="メールアドレス">
+	</md-input-container>
 
-<md-input-container>
-	<input mdInput placeholder="Favorite food" value="Sushi">
-</md-input-container>
+	<button md-raised-button>送信</button>
+</form>
 
 <p>
 	<a routerLink="/thanks">Thanks</a>

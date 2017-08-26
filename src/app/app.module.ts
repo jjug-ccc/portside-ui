@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from "@angular/http";
+import { FormsModule } from "@angular/forms";
+
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MdButtonModule, MdInputModule, MdCheckboxModule, MdCardModule } from "@angular/material";
 
 import { AppRoutingModule } from "./app-routing.module";
 
@@ -7,10 +12,8 @@ import { AppComponent } from './app.component';
 import { SessionsComponent } from './pages/sessions/sessions.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ThanksComponent } from './pages/thanks/thanks.component';
+
 import { SessionService } from "./session.service";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MdButtonModule, MdInputModule, MdCheckboxModule, MdCardModule } from "@angular/material";
-import { HttpModule } from "@angular/http";
 
 @NgModule({
 	declarations: [
@@ -22,6 +25,7 @@ import { HttpModule } from "@angular/http";
 	imports: [
 		BrowserModule,
 		HttpModule,
+		FormsModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		MdButtonModule,

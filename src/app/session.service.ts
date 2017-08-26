@@ -16,8 +16,13 @@ export class SessionService {
 	}
 
 	addAttendee() {
-		return this.http.post('/attendees', {}).map((response: Response) => {
-			return response.json();
+		let body = {
+			ids: ['897a2c29-bdca-4379-8e43-e464cd4b93e0'],
+			email: 'portside@example.com'
+		}
+		return this.http.post('/attendees', body).map((response: Response) => {
+			// return response.json();
+			return;
 		});
 	}
 }
