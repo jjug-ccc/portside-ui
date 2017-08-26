@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from "@angular/http";
+import { HttpModule, RequestOptions } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -13,6 +13,7 @@ import { SessionsComponent } from './pages/sessions/sessions.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ThanksComponent } from './pages/thanks/thanks.component';
 
+import { CustomRequestOptions } from "./custom-request.options";
 import { SessionService } from "./session.service";
 
 @NgModule({
@@ -34,6 +35,9 @@ import { SessionService } from "./session.service";
 		MdCardModule
 	],
 	providers: [
+		{
+			provide: RequestOptions, useClass: CustomRequestOptions
+		},
 		SessionService
 	],
 	bootstrap: [AppComponent]

@@ -8,7 +8,9 @@ import { SessionService } from "../../session.service";
 })
 export class SessionsComponent implements OnInit {
 
-	private sessions: any = [];
+	sessions: any = [];
+
+	attends: any = [];
 
 	constructor(private sessionService: SessionService) {
 	}
@@ -23,5 +25,9 @@ export class SessionsComponent implements OnInit {
 				console.dir(error);
 			}
 		);
+	}
+
+	toggle() {
+		console.log(this.attends);
 	}
 }
