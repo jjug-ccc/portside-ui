@@ -10,7 +10,7 @@ export class SessionService {
 	}
 
 	getSessions() {
-		return this.http.get('https://api.github.com/orgs/jsug-projects/repos').map((response: Response) => {
+		return this.http.get('/sessions').map((response: Response) => {
 			return response.json();
 		});
 	}
