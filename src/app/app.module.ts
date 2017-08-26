@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule, RequestOptions } from "@angular/http";
+import { HttpModule, RequestOptions, RequestOptionsArgs } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -16,7 +16,7 @@ import { SessionsComponent } from './pages/sessions/sessions.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ThanksComponent } from './pages/thanks/thanks.component';
 
-import { CustomRequestOptions } from "./custom-request.options";
+import { CustomRequestOptionsService} from "./custom-request-options.service";
 import { SessionService } from "./session.service";
 
 @NgModule({
@@ -41,7 +41,7 @@ import { SessionService } from "./session.service";
 	],
 	providers: [
 		{
-			provide: RequestOptions, useClass: CustomRequestOptions
+			provide: RequestOptions, useClass: CustomRequestOptionsService
 		},
 		SessionService
 	],

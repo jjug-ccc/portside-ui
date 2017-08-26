@@ -14,6 +14,8 @@ export class SessionsComponent implements OnInit {
 
 	attends: any = [];
 
+	canEmail: boolean = false;
+
 	constructor(
 		private sessionService: SessionService,
 		private dialog: MdDialog) {
@@ -32,12 +34,11 @@ export class SessionsComponent implements OnInit {
 	}
 
 	toggle() {
-		console.dir(this.attends);
+		let ids = Object.keys(this.attends).filter(key => this.attends[key]);
+		this.canEmail = ids.length > 0;
 	}
 
 	email() {
-		console.log('%%%')
-		console.dir(this.attends)
 		this.dialog.open(ProfileComponent, {
 			data: this.attends
 		});

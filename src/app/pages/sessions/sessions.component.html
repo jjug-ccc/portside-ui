@@ -22,8 +22,8 @@
 	</md-card>
 
 	<span class="done">
-		<button md-fab>
-		  <md-icon (click)="email()">send</md-icon>
+		<button md-fab [disabled]="!canEmail">
+		  <md-icon (click)="canEmail && email()">send</md-icon>
 		</button>
 	</span>
 </form>
