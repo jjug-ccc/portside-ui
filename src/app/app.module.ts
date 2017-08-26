@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { SessionsComponent } from './pages/sessions/sessions.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ThanksComponent } from './pages/thanks/thanks.component';
+import { SessionService } from "./session.service";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MdButtonModule, MdCheckboxModule } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -17,9 +20,14 @@ import { ThanksComponent } from './pages/thanks/thanks.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MdButtonModule,
+    MdCheckboxModule
   ],
-  providers: [],
+  providers: [
+    SessionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
