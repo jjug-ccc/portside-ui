@@ -9,7 +9,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ThanksComponent } from './pages/thanks/thanks.component';
 import { SessionService } from "./session.service";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MdButtonModule, MdCheckboxModule } from "@angular/material";
+import { MdButtonModule, MdCardModule, MdCheckboxModule } from "@angular/material";
 import { HttpModule } from "@angular/http";
 
 @NgModule({
@@ -25,7 +25,8 @@ import { HttpModule } from "@angular/http";
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		MdButtonModule,
-		MdCheckboxModule
+		MdCheckboxModule,
+		MdCardModule
 	],
 	providers: [
 		SessionService
