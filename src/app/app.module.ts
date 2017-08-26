@@ -4,7 +4,10 @@ import { HttpModule, RequestOptions } from "@angular/http";
 import { FormsModule } from "@angular/forms";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MdButtonModule, MdInputModule, MdCheckboxModule, MdCardModule } from "@angular/material";
+import {
+	MdButtonModule, MdInputModule, MdCheckboxModule, MdCardModule, MdIconModule,
+	MdDialogModule
+} from "@angular/material";
 
 import { AppRoutingModule } from "./app-routing.module";
 
@@ -32,7 +35,9 @@ import { SessionService } from "./session.service";
 		MdButtonModule,
 		MdInputModule,
 		MdCheckboxModule,
-		MdCardModule
+		MdCardModule,
+		MdIconModule,
+		MdDialogModule
 	],
 	providers: [
 		{

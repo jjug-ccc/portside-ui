@@ -1,13 +1,30 @@
 .session-item {
 	margin: 20px 0;
 }
-.session-checkbox {
-	float: right;
-}
 .header {
 	align-content: space-between;
+}
+.title-group {
+	flex-grow: 1;
+}
+.title-group .title {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.session-checkbox {
+	float: right;
+	display: flex;
+	font-size: 14px;
+	line-height: 36px;
 }
 .example-header-image {
   background-image: url('../../../assets/img/shiba1.jpg');
   background-size: cover;
+}
+
+.done {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	color: white;
 }

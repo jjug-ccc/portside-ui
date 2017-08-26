@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from "../../session.service";
+import { MdDialog } from "@angular/material";
+import { ProfileComponent } from "../profile/profile.component";
 
 @Component({
 	selector: 'app-sessions',
@@ -12,7 +14,9 @@ export class SessionsComponent implements OnInit {
 
 	attends: any = [];
 
-	constructor(private sessionService: SessionService) {
+	constructor(
+		private sessionService: SessionService,
+		private dialog: MdDialog) {
 	}
 
 	ngOnInit() {
@@ -28,6 +32,14 @@ export class SessionsComponent implements OnInit {
 	}
 
 	toggle() {
-		console.log(this.attends);
+		console.dir(this.attends);
+	}
+
+	email() {
+		console.log('%%%')
+		console.dir(this.attends)
+		this.dialog.open(ProfileComponent, {
+			data: this.attends
+		});
 	}
 }

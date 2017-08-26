@@ -1,10 +1,6 @@
-<form (ngSubmit)="attend()">
+<form (ngSubmit)="send()">
 	<md-input-container>
 		<input mdInput placeholder="メールアドレス" name="email" [(ngModel)]="attendee.email">
 	</md-input-container>
 	<button md-raised-button>送信</button>
 </form>
-
-<p>
-	<a routerLink="/thanks">Thanks</a>
-</p>

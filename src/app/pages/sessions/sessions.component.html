@@ -1,26 +1,29 @@
 <p>どのセッションを聞きたいですか？当てはまるものにチェックを入れてください</p>
+<form>
+	<md-card class="session-item" *ngFor="let session of sessions">
+		<md-card-header class="header">
+			<div md-card-avatar class="example-header-image"></div>
+			<div class="title-group">
+				<md-card-title class="title">{{ session.title }}</md-card-title>
+				<md-card-subtitle>{{ session.speaker }}</md-card-subtitle>
+			</div>
+			<div class="session-checkbox">
+				<div>
+					<button (click)="toggle()" md-button>詳細</button>
+				</div>
+				<md-checkbox name="attends" [(ngModel)]="attends[session.id]" (change)="toggle()">聞きたい</md-checkbox>
+			</div>
+		</md-card-header>
+		<md-card-content>
+			<p>
+				{{ session.description }}
+			</p>
+		</md-card-content>
+	</md-card>
 
-<md-card class="session-item" *ngFor="let session of sessions">
-	<md-card-header class="header">
-		<div md-card-avatar class="example-header-image"></div>
-		<md-card-title>{{ session.title }}</md-card-title>
-		<md-card-subtitle>{{ session.speaker }}</md-card-subtitle>
-		<div class="session-checkbox">
-			<md-checkbox name="ids" (change)="toggle()" [(ngModel)]="attends">聞きたい</md-checkbox>
-		</div>
-	</md-card-header>
-	<md-card-actions>
-		<div>
-			<button (click)="toggle()" md-button>詳細</button>
-		</div>
-	</md-card-actions>
-	<md-card-content>
-		<p>
-			{{ session.description }}
-		</p>
-	</md-card-content>
-</md-card>
-
-<p>
-	<a routerLink="/profile">Profile</a>
-</p>
+	<span class="done">
+		<button md-fab>
+		  <md-icon (click)="email()">send</md-icon>
+		</button>
+	</span>
+</form>
