@@ -10,6 +10,7 @@ import { ThanksComponent } from './pages/thanks/thanks.component';
 import { SessionService } from "./session.service";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MdButtonModule, MdCheckboxModule } from "@angular/material";
+import { HttpModule } from "@angular/http";
 
 @NgModule({
 	declarations: [
@@ -20,6 +21,7 @@ import { MdButtonModule, MdCheckboxModule } from "@angular/material";
 	],
 	imports: [
 		BrowserModule,
+		HttpModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		MdButtonModule,
