@@ -1,26 +1,25 @@
-<ul>
-	<li>
-		<md-card class="example-card" *ngFor="let session of sessions">
-		  <md-card-header>
-			<div md-card-avatar class="example-header-image"></div>
-			<md-card-title>{{ session.title }}</md-card-title>
-			<md-card-subtitle>{{ session.speaker }}</md-card-subtitle>
-		  </md-card-header>
-		  <img md-card-image src="assets/img/shiba2.jpg">
-		  <md-card-content>
-			<p>
-			  {{ session.description }}
-			</p>
-			  <div>
-				  <md-checkbox>Check me!</md-checkbox>
-			  </div>
-		  </md-card-content>
-		  <md-card-actions>
-			<button md-button>詳細</button>
-		  </md-card-actions>
-		</md-card>
-	</li>
-</ul>
+<p>どのセッションを聞きたいですか？当てはまるものにチェックを入れてください</p>
+
+<md-card class="session-item" *ngFor="let session of sessions">
+	<md-card-header class="header">
+		<div md-card-avatar class="example-header-image"></div>
+		<md-card-title>{{ session.title }}</md-card-title>
+		<md-card-subtitle>{{ session.speaker }}</md-card-subtitle>
+		<div class="session-checkbox">
+			<md-checkbox>聞きたい</md-checkbox>
+		</div>
+	</md-card-header>
+	<md-card-actions>
+		<div>
+			<button (click)="toggle()" md-button>詳細</button>
+		</div>
+	</md-card-actions>
+	<md-card-content>
+		<p>
+			{{ session.description }}
+		</p>
+	</md-card-content>
+</md-card>
 
 <p>
 	<a routerLink="/profile">Profile</a>
