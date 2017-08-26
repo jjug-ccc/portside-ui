@@ -9,6 +9,8 @@ import { Router } from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
 
+	private attendee: any = {};
+
 	constructor(
 		private sessionService: SessionService,
 		private router: Router) {
@@ -18,7 +20,7 @@ export class ProfileComponent implements OnInit {
 	}
 
 	attend() {
-		console.log('tes')
+		console.log(this.attendee.email)
 		this.sessionService.addAttendee().subscribe(
 			data => {
 				console.dir(data);

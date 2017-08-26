@@ -1,6 +1,6 @@
 <form (ngSubmit)="attend()">
 	<md-input-container>
-		<input mdInput placeholder="メールアドレス">
+		<input mdInput placeholder="メールアドレス" name="email" [(ngModel)]="attendee.email">
 	</md-input-container>
 
 	<button md-raised-button>送信</button>
