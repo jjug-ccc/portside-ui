@@ -6,7 +6,7 @@
 		<md-card-title>{{ session.title }}</md-card-title>
 		<md-card-subtitle>{{ session.speaker }}</md-card-subtitle>
 		<div class="session-checkbox">
-			<md-checkbox>聞きたい</md-checkbox>
+			<md-checkbox name="ids" (change)="toggle()" [(ngModel)]="attends">聞きたい</md-checkbox>
 		</div>
 	</md-card-header>
 	<md-card-actions>

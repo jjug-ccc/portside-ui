@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
 
-	private attendee: any = {};
+	attendee: any = {};
 
 	constructor(
 		private sessionService: SessionService,
