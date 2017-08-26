@@ -3,17 +3,17 @@
 <md-card class="session-item" *ngFor="let session of sessions">
 	<md-card-header class="header">
 		<div md-card-avatar class="example-header-image"></div>
-		<md-card-title>{{ session.title }}</md-card-title>
-		<md-card-subtitle>{{ session.speaker }}</md-card-subtitle>
+		<div class="title-group">
+			<md-card-title class="title">{{ session.title }}</md-card-title>
+			<md-card-subtitle>{{ session.speaker }}</md-card-subtitle>
+		</div>
 		<div class="session-checkbox">
-			<md-checkbox name="ids" (change)="toggle()" [(ngModel)]="attends">聞きたい</md-checkbox>
+			<div>
+				<button (click)="toggle()" md-button>詳細</button>
+			</div>
+			<md-checkbox>聞きたい</md-checkbox>
 		</div>
 	</md-card-header>
-	<md-card-actions>
-		<div>
-			<button (click)="toggle()" md-button>詳細</button>
-		</div>
-	</md-card-actions>
 	<md-card-content>
 		<p>
 			{{ session.description }}
