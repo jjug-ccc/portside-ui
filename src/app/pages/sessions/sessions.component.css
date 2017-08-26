@@ -21,3 +21,10 @@
   background-image: url('../../../assets/img/shiba1.jpg');
   background-size: cover;
 }
+
+.done {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	color: white;
+}
