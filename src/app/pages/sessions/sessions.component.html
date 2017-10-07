@@ -8,21 +8,25 @@
 		</section>
 	</div>
 </header>
-<p>どのセッションを聞きたいですか？当てはまるものにチェックを入れてください</p>
+<p style="margin: 20px 31px; color: #565656">どのセッションを聞きたいですか？当てはまるものにチェックを入れてください</p>
 <form>
 	<md-card class="session-item" *ngFor="let session of sessions">
 		<div class="header">
-			<md-card-title class="title">{{ session.title }}</md-card-title>
-			<div class="session-checkbox">
-				<md-checkbox name="attends" [(ngModel)]="attends[session.id]" (change)="toggle()">聞きたい</md-checkbox>
+			<div class="flexbox">
+				<section class="main">
+					<md-card-title class="title">{{ session.title }}</md-card-title>
+				</section>
+				<section class="side session-checkbox">
+					<md-checkbox name="attends" [(ngModel)]="attends[session.id]" (change)="toggle()">聞きたい</md-checkbox>
+				</section>
 			</div>
 		</div>
 		<md-card-content>
-			<h3>セッション概要</h3>
-			<p>
-				{{ session.description }}
-			</p>
-			<h3>スピーカー</h3>
+			<div class="description">
+				<p>
+					{{ session.description }}
+				</p>
+			</div>
 			<md-card-header *ngFor="let speaker of session.speakers">
 				<div mat-card-avatar class="example-header-image">
 					<img md-card-avatar src="{{ speaker.imageUrl }}">
