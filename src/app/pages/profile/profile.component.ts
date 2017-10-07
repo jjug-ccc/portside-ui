@@ -25,7 +25,6 @@ export class ProfileComponent implements OnInit {
 
 	send() {
 		let ids = Object.keys(this.attends).filter(key => this.attends[key]);
-		console.log(ids)
 
 		this.sessionService.addAttendee(ids, this.attendee.email).subscribe(
 			data => {

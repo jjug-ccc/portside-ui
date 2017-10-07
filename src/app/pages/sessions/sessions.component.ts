@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SessionService } from "../../session.service";
 import { MatDialog } from "@angular/material";
 import { ProfileComponent } from "../profile/profile.component";
-import { ActivatedRoute, Params } from "@angular/router";
+import { ActivatedRoute, Params, Router } from "@angular/router";
 import { Observable } from 'rxjs/Rx';
 import { AttendeeService } from "../../attendee.service";
 
@@ -19,8 +19,11 @@ export class SessionsComponent implements OnInit {
 
 	canEmail: boolean = false;
 
+	attendeeId: string = null;
+
 	constructor(
 		private activatedRoute: ActivatedRoute,
+		private router: Router,
 		private sessionService: SessionService,
 		private attendeeService: AttendeeService,
 		private dialog: MatDialog) {
@@ -32,12 +35,12 @@ export class SessionsComponent implements OnInit {
 				let o1 = this.sessionService.getSessions();
 				let o2 = Observable.of(null);
 				if (params.id) {
+					this.attendeeId = params.id;
 					o2 = this.attendeeService.getSessions(params.id);
 				}
 
 				Observable.forkJoin([o1, o2]).subscribe(results => {
 					if (results[1]) {
-						console.dir(results[1])
 						results[1].forEach(session => {
 							this.attends[session.id] = true;
 						});
@@ -57,8 +60,20 @@ export class SessionsComponent implements OnInit {
 	}
 
 	email() {
-		this.dialog.open(ProfileComponent, {
-			data: this.attends
-		});
+		if (this.attendeeId == null) {
+			this.dialog.open(ProfileComponent, {
+				data: this.attends
+			});
+		} else {
+			let ids = Object.keys(this.attends).filter(key => this.attends[key]);
+			this.attendeeService.updateSessions(this.attendeeId, ids).subscribe(
+				data => {
+					this.router.navigate(['/thanks'])
+				},
+				error => {
+					console.log(error);
+				}
+			);
+		}
 	}
 }

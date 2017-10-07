@@ -14,4 +14,13 @@ export class AttendeeService {
 		});
 	}
 
+	updateSessions(id, sessionIds) {
+		let body = {
+			ids: sessionIds
+		};
+		return this.http.put(`/attendees/${id}`, body).map((response: Response) => {
+			return response.json();
+		});
+
+	}
 }
