@@ -12,6 +12,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
 
+	sending: boolean = false;
 	email: FormControl = new FormControl('', [Validators.required, Validators.email]);
 
 	constructor(
@@ -35,8 +36,8 @@ export class ProfileComponent implements OnInit {
 	}
 
 	send() {
+		this.sending = true;
 		let ids = Object.keys(this.attends).filter(key => this.attends[key]);
-
 		this.sessionService.addAttendee(ids, this.email.value).subscribe(
 			data => {
 				this.dialogRef.close();
@@ -44,6 +45,7 @@ export class ProfileComponent implements OnInit {
 			},
 			error => {
 				console.log(error);
+				this.sending = false;
 			}
 		);
 	}

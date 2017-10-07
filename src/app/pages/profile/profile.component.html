@@ -3,5 +3,5 @@
 		<input matInput placeholder="メールアドレス" [formControl]="email" required>
 		<mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
 	</mat-form-field>
-	<button mat-raised-button>送信</button>
+	<button mat-raised-button [disabled]="sending">送信</button>
 </form>
