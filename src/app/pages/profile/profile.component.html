@@ -1,6 +1,7 @@
 <form (ngSubmit)="send()">
-	<mat-input-container>
-		<input matInput placeholder="メールアドレス" name="email" [(ngModel)]="attendee.email">
-	</mat-input-container>
+	<mat-form-field>
+		<input matInput placeholder="メールアドレス" [formControl]="email" required>
+		<mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+	</mat-form-field>
 	<button mat-raised-button>送信</button>
 </form>

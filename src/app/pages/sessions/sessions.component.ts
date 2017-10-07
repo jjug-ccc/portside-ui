@@ -13,12 +13,10 @@ import { AttendeeService } from "../../attendee.service";
 })
 export class SessionsComponent implements OnInit {
 
+	loading: boolean = true;
 	sessions: any = [];
-
 	attends: any = {};
-
 	canEmail: boolean = false;
-
 	attendeeId: string = null;
 
 	constructor(
@@ -40,6 +38,8 @@ export class SessionsComponent implements OnInit {
 				}
 
 				Observable.forkJoin([o1, o2]).subscribe(results => {
+					this.loading = false;
+					
 					if (results[1]) {
 						results[1].forEach(session => {
 							this.attends[session.id] = true;
