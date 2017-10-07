@@ -5,8 +5,8 @@ import { FormsModule } from "@angular/forms";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
-	MdButtonModule, MdInputModule, MdCheckboxModule, MdCardModule, MdIconModule,
-	MdDialogModule
+	MatButtonModule, MatInputModule, MatCheckboxModule, MatCardModule, MatIconModule,
+	MatDialogModule
 } from "@angular/material";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -18,6 +18,7 @@ import { ThanksComponent } from './pages/thanks/thanks.component';
 
 import { CustomRequestOptionsService} from "./custom-request-options.service";
 import { SessionService } from "./session.service";
+import { AttendeeService} from "./attendee.service";
 
 @NgModule({
 	declarations: [
@@ -32,18 +33,19 @@ import { SessionService } from "./session.service";
 		FormsModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
-		MdButtonModule,
-		MdInputModule,
-		MdCheckboxModule,
-		MdCardModule,
-		MdIconModule,
-		MdDialogModule
+		MatButtonModule,
+		MatInputModule,
+		MatCheckboxModule,
+		MatCardModule,
+		MatIconModule,
+		MatDialogModule
 	],
 	providers: [
 		{
 			provide: RequestOptions, useClass: CustomRequestOptionsService
 		},
-		SessionService
+		SessionService,
+		AttendeeService
 	],
 	bootstrap: [AppComponent]
 })

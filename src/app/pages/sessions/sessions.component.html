@@ -10,32 +10,32 @@
 </header>
 <p>どのセッションを聞きたいですか？当てはまるものにチェックを入れてください</p>
 <form>
-	<md-card class="session-item" *ngFor="let session of sessions">
+	<mat-card class="session-item" *ngFor="let session of sessions">
 		<div class="header">
-			<md-card-title class="title">{{ session.title }}</md-card-title>
+			<mat-card-title class="title">{{ session.title }}</mat-card-title>
 			<div class="session-checkbox">
-				<md-checkbox name="attends" [(ngModel)]="attends[session.id]" (change)="toggle()">聞きたい</md-checkbox>
+				<mat-checkbox name="attends" value="{{ session.id }}" [checked]="attends[session.id]" (change)="toggle($event)">聞きたい</mat-checkbox>
 			</div>
 		</div>
-		<md-card-content>
+		<mat-card-content>
 			<h3>セッション概要</h3>
 			<p>
 				{{ session.description }}
 			</p>
 			<h3>スピーカー</h3>
-			<md-card-header *ngFor="let speaker of session.speakers">
+			<mat-card-header *ngFor="let speaker of session.speakers">
 				<div mat-card-avatar class="example-header-image">
-					<img md-card-avatar src="{{ speaker.imageUrl }}">
+					<img mat-card-avatar src="{{ speaker.imageUrl }}">
 				</div>
-				<md-card-title>{{ speaker.name }} </md-card-title>
-				<md-card-subtitle>{{ speaker.belongTo }}</md-card-subtitle>
-			</md-card-header>
-		</md-card-content>
-	</md-card>
+				<mat-card-title>{{ speaker.name }} </mat-card-title>
+				<mat-card-subtitle>{{ speaker.belongTo }}</mat-card-subtitle>
+			</mat-card-header>
+		</mat-card-content>
+	</mat-card>
 
 	<span class="done">
-		<button md-fab [disabled]="!canEmail">
-		  <md-icon (click)="canEmail && email()">send</md-icon>
+		<button mat-fab [disabled]="!canEmail">
+		  <mat-icon (click)="canEmail && email()">send</mat-icon>
 		</button>
 	</span>
 </form>

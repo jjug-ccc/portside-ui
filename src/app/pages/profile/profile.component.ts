@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { SessionService } from "../../session.service";
 import { Router } from "@angular/router";
-import { MdDialogRef } from "@angular/material";
-import { MD_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef } from "@angular/material";
+import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
 	selector: 'app-profile',
@@ -16,8 +16,8 @@ export class ProfileComponent implements OnInit {
 	constructor(
 		private sessionService: SessionService,
         private router: Router,
-        private dialogRef: MdDialogRef<ProfileComponent>,
-		@Inject(MD_DIALOG_DATA) public attends: any) {
+        private dialogRef: MatDialogRef<ProfileComponent>,
+		@Inject(MAT_DIALOG_DATA) public attends: any) {
 	}
 
 	ngOnInit() {
