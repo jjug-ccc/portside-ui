@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule, RequestOptions, RequestOptionsArgs } from "@angular/http";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
-	MatButtonModule, MatInputModule, MatCheckboxModule, MatCardModule, MatIconModule,
+	MatFormFieldModule, MatButtonModule, MatInputModule, MatCheckboxModule, MatCardModule, MatIconModule, MatProgressSpinnerModule,
 	MatDialogModule
 } from "@angular/material";
 
@@ -31,13 +31,16 @@ import { AttendeeService} from "./attendee.service";
 		BrowserModule,
 		HttpModule,
 		FormsModule,
+		ReactiveFormsModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
+		MatFormFieldModule,
 		MatButtonModule,
 		MatInputModule,
 		MatCheckboxModule,
 		MatCardModule,
 		MatIconModule,
+		MatProgressSpinnerModule,
 		MatDialogModule
 	],
 	providers: [
