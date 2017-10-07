@@ -19,7 +19,7 @@ export class SessionService {
 		let body = {
 			ids: ids,
 			email: email
-		}
+		};
 		return this.http.post('/attendees', body).map((response: Response) => {
 			// return response.json();
 			return;

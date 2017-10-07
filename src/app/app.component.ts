@@ -10,9 +10,6 @@ import { ResizeService } from './resize.service';
 export class AppComponent {
 	constructor(private resizeService: ResizeService) {
 		resizeService.window.subscribe((val) => {
-			if (val) {
-				console.log(val.innerWidth);
-			}
 		});
 	};
 	title = 'app';
