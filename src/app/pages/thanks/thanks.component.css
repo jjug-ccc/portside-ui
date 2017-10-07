@@ -1,0 +1,27 @@
+.thank-you {
+	text-align: center;
+	margin: 50px auto;
+}
+.thank-you img {
+	width: 100px;
+}
+.thank-you h1 {
+	font-size: 5em;
+	margin: 0;
+}
+.thank-you p {
+	margin: 2em 0;
+}
+a, a:visited {
+	margin: 6em 0;
+	color: #64bb37;
+	padding: 15px;
+	border: 2px solid #64bb37;
+	text-decoration: none;
+}
+a:hover {
+	opacity: 0.5;
+}
+footer {
+	margin-top: 6em;
+}
