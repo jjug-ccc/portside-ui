@@ -1,45 +1,56 @@
 <header>
-	<div class="flexbox">
-		<section class="main">
-			<img src="../assets/img/logo.png"/>
-		</section>
-		<section class="side">
-			<h1 style="">Spring Fest 2017 アンケート</h1>
-		</section>
+	<div class="container">
+		<div class="flexbox">
+			<section class="main">
+				<img src="../assets/img/logo.png"/>
+			</section>
+			<section class="side">
+				<h1 style="">Spring Fest 2017 アンケート</h1>
+			</section>
+		</div>
 	</div>
 </header>
-<p style="margin: 20px 31px; color: #565656">どのセッションを聞きたいですか？当てはまるものにチェックを入れてください</p>
+<div class="questionnaire">
+	<div class="container">
+		<p>どのセッションを聞きたいですか？当てはまるものにチェックを入れてください</p>
+	</div>
+</div>
 <form>
-	<mat-card class="session-item" *ngFor="let session of sessions">
-		<div class="header">
-			<div class="flexbox">
-				<section class="main">
-					<mat-card-title class="title">{{ session.title }}</mat-card-title>
-				</section>
-				<section class="side session-checkbox">
-					<mat-checkbox name="attends" value="{{ session.id }}" [checked]="attends[session.id]" (change)="toggle($event)">聞きたい</mat-checkbox>
-				</section>
-			</div>
-		</div>
-		<mat-card-content>
-			<div class="description">
-				<p>
-					{{ session.description }}
-				</p>
-			</div>
-			<mat-card-header *ngFor="let speaker of session.speakers">
-				<div mat-card-avatar class="example-header-image">
-					<img mat-card-avatar src="{{ speaker.imageUrl }}">
+	<div class="card-group">
+		<mat-card class="session-item" *ngFor="let session of sessions">
+			<div class="title-header">
+				<div class="flexbox">
+					<section class="main">
+						<mat-card-title class="title">{{ session.title }}</mat-card-title>
+					</section>
+					<section class="side session-checkbox">
+						<mat-checkbox name="attends" value="{{ session.id }}" [checked]="attends[session.id]" (change)="toggle($event)">聞きたい！</mat-checkbox>
+					</section>
 				</div>
-				<mat-card-title>{{ speaker.name }} </mat-card-title>
-				<mat-card-subtitle>{{ speaker.belongTo }}</mat-card-subtitle>
-			</mat-card-header>
-		</mat-card-content>
-	</mat-card>
-
-	<span class="done">
+			</div>
+			<mat-card-content>
+				<div class="description">
+					<p>
+						{{ session.description }}
+					</p>
+				</div>
+				<div class="speakers" *ngFor="let speaker of session.speakers">
+					<div class="flexbox">
+						<section class="main">
+							<img mat-card-avatar src="{{ speaker.imageUrl }}">
+						</section>
+						<section class="side">
+							<mat-card-title>{{ speaker.name }} </mat-card-title>
+							<mat-card-subtitle>{{ speaker.belongTo }}</mat-card-subtitle>
+						</section>
+					</div>
+				</div>
+			</mat-card-content>
+		</mat-card>
+	</div>
+	<div class="done">
 		<button mat-fab [disabled]="!canEmail">
 		  <mat-icon (click)="canEmail && email()">send</mat-icon>
 		</button>
-	</span>
+	</div>
 </form>
