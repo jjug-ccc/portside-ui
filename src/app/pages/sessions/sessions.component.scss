@@ -58,6 +58,9 @@ header {
 			line-height: 1.7em;
 			font-family: Roboto, "Helvetica Neue", sans-serif;
 			margin: 5px 0;
+			overflow: auto;
+			white-space: pre-wrap;
+			word-wrap: break-word;
 		}
 	}
 }
