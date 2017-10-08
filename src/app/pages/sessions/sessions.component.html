@@ -33,9 +33,7 @@
 			</div>
 			<mat-card-content>
 				<div class="description">
-					<p>
-						{{ session.description }}
-					</p>
+					<pre>{{ session.description }}</pre>
 				</div>
 				<div class="speakers" *ngFor="let speaker of session.speakers">
 					<div class="flexbox">
