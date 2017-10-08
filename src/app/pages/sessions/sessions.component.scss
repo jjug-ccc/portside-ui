@@ -54,6 +54,11 @@ header {
 	.description {
 		padding-left: 6px;
 		margin: 0 0 2em;
+		pre {
+			line-height: 1.7em;
+			font-family: Roboto, "Helvetica Neue", sans-serif;
+			margin: 5px 0;
+		}
 	}
 }
 .mat-card:not([class*=mat-elevation-z]) {
