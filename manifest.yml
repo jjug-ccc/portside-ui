@@ -3,6 +3,3 @@ applications:
   buildpack: staticfile_buildpack
   memory: 64m
   path: dist
-  domains:
-  - cfapps.pez.pivotal.io
-  - springfest.cf
