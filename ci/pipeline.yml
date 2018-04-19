@@ -9,7 +9,7 @@ resources:
   - name: repo-master
     type: git
     source:
-      uri: https://github.com/jsug-projects/portside-ui.git
+      uri: https://github.com/jjug-ccc/portside-ui.git
       branch: master
   - name: cf
     type: cf
@@ -61,7 +61,7 @@ jobs:
       - put: cf
         params:
           manifest: output/manifest.yml
-          current_app_name: portside
+          current_app_name: jjug-ccc-2018-spring-survey
         on_success:
           <<: *SLACK_SUCCESS
         on_failure:

@@ -7,7 +7,7 @@
 	margin: 0 auto;
 }
 header {
-	background-image: linear-gradient(45deg, #64bb37, skyblue);
+	background-image: linear-gradient(45deg, white, snow);
 	margin: -10px -20px;
 	padding: 10px 33px 3px;
 	img {
@@ -16,16 +16,16 @@ header {
 	}
 	h1 {
 		font-family: 'Aldrich', sans-serif;
-		color: #ffffff;
+		color: #666;
 	}
 }
 .questionnaire {
-	background-image: linear-gradient(45deg, #239a78, #64bb37);
+	background-image: linear-gradient(45deg, #ffefeb, #ef4034);
 	margin: 10px -20px;
 	padding: 1px;
 	p {
 		margin: 8px 10px;
-		color: #ffffff;
+		color: ghostwhite;
 	}
 }
 .flexbox {
@@ -50,6 +50,9 @@ header {
 			margin-bottom: 8px;
 		}
 		margin-bottom: .3em;
+		a {
+		    color: #ef4034;
+		}
 	}
 	.description {
 		padding-left: 6px;

@@ -5,14 +5,14 @@
 				<img src="../assets/img/logo.png"/>
 			</section>
 			<section class="side">
-				<h1 style="">Spring Fest 2017 アンケート</h1>
+				<h1 style="">JJUG CCC 2018 Spring アンケート</h1>
 			</section>
 		</div>
 	</div>
 </header>
 <div class="questionnaire">
 	<div class="container">
-		<p>どのセッションを聞きたいですか？当てはまるものにチェックを入れてください</p>
+		<p>どのセッションを聞きたいですか？当てはまるものにチェックを入れてください(7つ目安)</p>
 	</div>
 </div>
 <div class="container" *ngIf="loading">
@@ -34,15 +34,16 @@
 			<mat-card-content>
 				<div class="description">
 					<pre>{{ session.description }}</pre>
+					<a mat-raised-button href="{{ session.url }}" target="_blank">詳細</a>
 				</div>
 				<div class="speakers" *ngFor="let speaker of session.speakers">
 					<div class="flexbox">
 						<section class="main">
-							<img mat-card-avatar src="{{ speaker.imageUrl }}">
+							<img mat-card-avatar src="{{ speaker.profileUrl }}">
 						</section>
 						<section class="side">
 							<mat-card-title>{{ speaker.name }} </mat-card-title>
-							<mat-card-subtitle>{{ speaker.belongTo }}</mat-card-subtitle>
+							<mat-card-subtitle>{{ speaker.companyOrCommunity }}</mat-card-subtitle>
 						</section>
 					</div>
 				</div>
