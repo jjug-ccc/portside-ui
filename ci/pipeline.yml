@@ -70,12 +70,12 @@ params:
   slack_success: &SLACK_SUCCESS
     put: slack-alert
     params:
-      channel: '#concourse'
+      channel: '#cfp'
       text: |
         <!here> :white_check_mark: *$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME* succeeded with build <$ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|$BUILD_NAME>!
   slack_failure:  &SLACK_FAILURE
     put: slack-alert
     params:
-      channel: '#concourse'
+      channel: '#cfp'
       text: |
         <!here> :rotating_light: *$BUILD_PIPELINE_NAME/$BUILD_JOB_NAME* failed with build <$ATC_EXTERNAL_URL/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME|$BUILD_NAME>!
