@@ -16,7 +16,7 @@ export class SessionService {
 				.map(x => {
 					let id = x._links.self.href.split('/').pop();
 					let url = environment.apiUrl + '/submissions/' + id;
-					let max = x.language === 'ENGLISH' ? 600 : 400;
+					let max = x.language === 'ENGLISH' ? 600 : 250;
 					x.id = id;
 					x.url = url;
 					if (x.description.length > max) {
