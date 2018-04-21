@@ -9,8 +9,8 @@ export class AttendeeService {
 	}
 
 	getSessions(id) {
-		return this.http.get(`/attendees/${id}/sessions`).map((response: Response) => {
-			return response.json();
+		return this.http.get(`/v1/conferences/00000000-0000-0000-0000-000020180526/attendees/${id}`).map((response: Response) => {
+			return response.json().submissions;
 		});
 	}
 
@@ -18,7 +18,7 @@ export class AttendeeService {
 		let body = {
 			ids: sessionIds
 		};
-		return this.http.put(`/attendees/${id}`, body).map((response: Response) => {
+		return this.http.post(`/v1/conferences/00000000-0000-0000-0000-000020180526/attendees/${id}`, body).map((response: Response) => {
 			return response.json();
 		});
 

@@ -39,10 +39,10 @@ export class SessionsComponent implements OnInit {
 
 				Observable.forkJoin([o1, o2]).subscribe(results => {
 					this.loading = false;
-					
+
 					if (results[1]) {
 						results[1].forEach(session => {
-							this.attends[session.id] = true;
+							this.attends[session.submissionId] = true;
 						});
 					}
 					this.sessions = results[0];
