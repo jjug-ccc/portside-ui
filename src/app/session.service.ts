@@ -11,10 +11,11 @@ export class SessionService {
 	getSessions() {
 		return this.http.get('https://jjug-cfp.cfapps.io/v1/conferences/00000000-0000-0000-0000-000020180526/submissions').map((response: Response) => {
 			return response.json()['_embedded'].submissions
+				.filter(x => x.talkType !== 'LT')
 				.map(x => {
 					let id = x._links.self.href.split('/').pop();
 					let url = 'https://jjug-cfp.cfapps.io/submissions/' + id;
-					let max = 600;
+					let max = x.language === 'ENGLISH' ? 600 : 400;
 					x.id = id;
 					x.url = url;
 					if (x.description.length > max) {
