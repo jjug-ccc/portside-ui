@@ -12,7 +12,9 @@
 </header>
 <div class="questionnaire">
 	<div class="container">
-		<p>どのセッションを聞きたいですか？当てはまるものにチェックを入れてください(7つ目安)</p>
+		<p>どのセッションを聞きたいですか？当てはまるものにチェックを入れてください(7つ目安)<br>
+			このアンケートは<strong>当日の座席確保を保証するものではありません</strong>。
+		</p>
 	</div>
 </div>
 <div class="container" *ngIf="loading">
@@ -27,7 +29,9 @@
 						<mat-card-title class="title">{{ session.title }}</mat-card-title>
 					</section>
 					<section class="side session-checkbox">
-						<mat-checkbox name="attends" value="{{ session.id }}" [checked]="attends[session.id]" (change)="toggle($event)">聞きたい！</mat-checkbox>
+						<mat-checkbox name="attends" value="{{ session.id }}" [checked]="attends[session.id]"
+									  (change)="toggle($event)">聞きたい！
+						</mat-checkbox>
 					</section>
 				</div>
 			</div>
@@ -42,7 +46,7 @@
 							<img mat-card-avatar src="{{ speaker.profileUrl }}">
 						</section>
 						<section class="side">
-							<mat-card-title>{{ speaker.name }} </mat-card-title>
+							<mat-card-title>{{ speaker.name }}</mat-card-title>
 							<mat-card-subtitle>{{ speaker.companyOrCommunity }}</mat-card-subtitle>
 						</section>
 					</div>
@@ -52,7 +56,7 @@
 	</div>
 	<div class="done">
 		<button mat-fab [disabled]="!canEmail">
-		  <mat-icon (click)="canEmail && email()">send</mat-icon>
+			<mat-icon (click)="canEmail && email()">send</mat-icon>
 		</button>
 	</div>
 </form>
