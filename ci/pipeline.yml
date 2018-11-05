@@ -61,7 +61,7 @@ jobs:
       - put: cf
         params:
           manifest: output/manifest.yml
-          current_app_name: jjug-ccc-2018-spring-survey
+          current_app_name: jjug-ccc-2018-fall-survey
         on_success:
           <<: *SLACK_SUCCESS
         on_failure:

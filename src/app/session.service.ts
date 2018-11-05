@@ -10,7 +10,7 @@ export class SessionService {
 	}
 
 	getSessions() {
-		return this.http.get('/v1/conferences/00000000-0000-0000-0000-000020180526/submissions').map((response: Response) => {
+		return this.http.get('/v1/conferences/fcb9a015-4fb9-4c2b-ad9e-6d71caabf202/submissions').map((response: Response) => {
 			return response.json()['_embedded'].submissions
 				.filter(x => x.talkType !== 'LT')
 				.map(x => {
@@ -32,7 +32,7 @@ export class SessionService {
 			ids: ids,
 			email: email
 		};
-		return this.http.post('/v1/conferences/00000000-0000-0000-0000-000020180526/attendees', body).map((response: Response) => {
+		return this.http.post('/v1/conferences/fcb9a015-4fb9-4c2b-ad9e-6d71caabf202/attendees', body).map((response: Response) => {
 			// return response.json();
 			return;
 		});
