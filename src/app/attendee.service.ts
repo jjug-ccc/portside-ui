@@ -9,7 +9,7 @@ export class AttendeeService {
 	}
 
 	getSessions(id) {
-		return this.http.get(`/v1/conferences/eab1136d-27dc-4874-81bc-7511ba540c69/attendees/${id}`).map((response: Response) => {
+		return this.http.get(`/v1/conferences/4abde357-9994-4578-b760-a1698ff6f338/attendees/${id}`).map((response: Response) => {
 			return response.json().submissions;
 		});
 	}
@@ -18,7 +18,7 @@ export class AttendeeService {
 		let body = {
 			ids: sessionIds
 		};
-		return this.http.post(`/v1/conferences/eab1136d-27dc-4874-81bc-7511ba540c69/attendees/${id}`, body).map((response: Response) => {
+		return this.http.post(`/v1/conferences/4abde357-9994-4578-b760-a1698ff6f338/attendees/${id}`, body).map((response: Response) => {
 			return response.json();
 		});
 
